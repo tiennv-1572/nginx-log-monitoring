@@ -51,6 +51,10 @@ const statusCodeAndMessage = [
     "code": " 511 ",
     "message": "[Server Nginx alert]: 511 Network Authentication Required.",
   },
+  {
+    "code": "no",
+    "message": "[Server Nginx alert]: Something went wrong!!!",
+  },
 ];
 
 module.exports = {

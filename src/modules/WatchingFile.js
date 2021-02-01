@@ -32,12 +32,14 @@ class WatchingFile extends EventEmitter {
 
         if (type === nginxType) {
           for (let item of analysisCode.statusCodeAndMessage) {
+            let alertMessage = logData;
             if (parseInt(item.code) == parser(logData).status) {
               let alertMessage = `${item.message} \n ${logData}`;
   
               debug(`[${new Date().toLocaleString()}][${type}] Push alert message to chatwork...`);
-              this.emit("new-error-appeared", {message: alertMessage});
             }
+
+            this.emit("new-error-appeared", {message: alertMessage});
           }
         }
 
